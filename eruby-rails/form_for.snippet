@@ -1,0 +1,13 @@
+<% form_for @${1:model} do |f| %>
+	<% if @${2:$1}.errors.any? %>
+	<div class="${3:error_message}">
+		<h2>${4:Form is invalid}</h2>
+		<ul>
+			<%for message in @${5:$1}.errors.full_messages %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	<p class="button"><%= f.submit %></p>
+<% end -%>
